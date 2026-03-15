@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+
+# Node modules (if any)
+node_modules/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Flask debug files
+instance/
+
+# JetBrains
+*.iml
+
+# Misc
+*.swp
