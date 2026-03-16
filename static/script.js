@@ -34,11 +34,11 @@ function printIntegralResult(target, data) {
 }
 
 function printImproperResult(target, data) {
-  const prefix = "&gt; ";
+  const prefix = "> ";
 
   if (!data.ok) {
     const lines = [`${prefix}ошибка: <span class="error">${data.error}</span>`];
-    while (lines.length < 4) lines.push(prefix);
+    while (lines.length < 2) lines.push(prefix);
     target.innerHTML = lines.join("\n");
     return;
   }
@@ -46,23 +46,15 @@ function printImproperResult(target, data) {
   if (!data.exists) {
     const lines = [
       `${prefix}сходимость: <span class="error">интеграл не существует (расходится)</span>`,
+      prefix,
     ];
-    while (lines.length < 4) lines.push(prefix);
     target.innerHTML = lines.join("\n");
     return;
   }
 
   const lines = [];
-  lines.push(`${prefix}интеграл существует (сходится)`);
+  lines.push(`${prefix}сходимость: интеграл существует (сходится)`);
   lines.push(`${prefix}значение ≈ <span class="accent">${data.value}</span>`);
-  if (data.exact_value !== null) {
-    lines.push(`${prefix}точное значение = ${data.exact_value}`);
-  }
-  if (data.exact_error !== null) {
-    lines.push(`${prefix}|погрешность| = ${data.exact_error}`);
-  }
-  while (lines.length < 4) lines.push(prefix);
-  if (lines.length > 4) lines.length = 4;
   target.innerHTML = lines.join("\n");
 }
 

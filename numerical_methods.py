@@ -131,7 +131,7 @@ METHODS = {
 }
 
 
-def integrate_with_runge(f, a, b, method_key, eps, n0=4, n_max=16 * 1024 * 1024):
+def integrate_with_runge(f, a, b, method_key, eps, n0=4, n_max=4 * 1024 * 1024):
     method_info = METHODS[method_key]
     method = method_info["func"]
     p = method_info["order"]
